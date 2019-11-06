@@ -56,6 +56,36 @@
               @{@"photo" : @"img_nami",
                 @"name" : @"Nami",
                 },
+                 @{@"photo" : @"img_luffy",
+                   @"name" : @"Luffy",
+                   },
+                 @{@"photo" : @"img_zoro",
+                   @"name" : @"Zoro",
+                   },
+                 @{@"photo" : @"img_usopp",
+                   @"name" : @"Usopp",
+                   },
+                 @{@"photo" : @"img_sanji",
+                   @"name" : @"Sanji",
+                   },
+                 @{@"photo" : @"img_nami",
+                   @"name" : @"Nami",
+                   },
+                 @{@"photo" : @"img_luffy",
+                   @"name" : @"Luffy",
+                   },
+                 @{@"photo" : @"img_zoro",
+                   @"name" : @"Zoro",
+                   },
+                 @{@"photo" : @"img_usopp",
+                   @"name" : @"Usopp",
+                   },
+                 @{@"photo" : @"img_sanji",
+                   @"name" : @"Sanji",
+                   },
+                 @{@"photo" : @"img_nami",
+                   @"name" : @"Nami",
+                   },
               nil] ;
 
 }
@@ -102,7 +132,7 @@
     CGRect screenBound = [[UIScreen mainScreen] bounds];
     CGSize screenSize = screenBound.size;
     
-    CGFloat computedHeight = screenSize.width / 3;
+    CGFloat computedHeight = screenSize.width / 6;
     CGFloat computedWidth = screenSize.height / 4;
     
     return CGSizeMake(computedWidth, computedHeight);
