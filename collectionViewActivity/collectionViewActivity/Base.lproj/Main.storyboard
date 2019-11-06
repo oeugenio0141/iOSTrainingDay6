@@ -25,7 +25,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="572"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X2k-fU-xDl" userLabel="Content View">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="572"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="622"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Rated Movies" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVU-Ow-YSL">
                                                         <rect key="frame" x="16" y="10" width="343" height="24"/>
@@ -34,13 +34,13 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Le4-yc-elF">
-                                                        <rect key="frame" x="0.0" y="44" width="375" height="100"/>
+                                                        <rect key="frame" x="0.0" y="44" width="375" height="150"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="100" id="xgg-ov-Hb9"/>
+                                                            <constraint firstAttribute="height" constant="150" id="xgg-ov-Hb9"/>
                                                         </constraints>
-                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cJ9-nd-YM4">
-                                                            <size key="itemSize" width="50" height="50"/>
+                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="5" id="cJ9-nd-YM4">
+                                                            <size key="itemSize" width="30" height="30"/>
                                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -52,7 +52,7 @@
                                                         </connections>
                                                     </collectionView>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NSi-gT-lF1">
-                                                        <rect key="frame" x="0.0" y="198" width="375" height="364"/>
+                                                        <rect key="frame" x="0.0" y="248" width="375" height="364"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="364" id="qP8-W4-KMN"/>
@@ -65,12 +65,12 @@
                                                         </collectionViewFlowLayout>
                                                         <cells/>
                                                         <connections>
-                                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="wJO-lG-OnW"/>
-                                                            <outlet property="delegate" destination="BYZ-38-t0r" id="kG6-hm-Rf1"/>
+                                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="ybp-jH-L2Z"/>
+                                                            <outlet property="delegate" destination="BYZ-38-t0r" id="ipn-hz-WYT"/>
                                                         </connections>
                                                     </collectionView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now Showing" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5IH-6q-8lS">
-                                                        <rect key="frame" x="16" y="164" width="343" height="24"/>
+                                                        <rect key="frame" x="16" y="214" width="343" height="24"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="24" id="Ysa-X9-CZA"/>
                                                         </constraints>
@@ -145,12 +145,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="nowShowingCollectionView" destination="NSi-gT-lF1" id="FYS-AD-F2x"/>
                         <outlet property="topRatedCollectionView" destination="Le4-yc-elF" id="Nfb-gQ-RXj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-68" y="-34"/>
+            <point key="canvasLocation" x="-68" y="-34.632683658170919"/>
         </scene>
     </scenes>
 </document>

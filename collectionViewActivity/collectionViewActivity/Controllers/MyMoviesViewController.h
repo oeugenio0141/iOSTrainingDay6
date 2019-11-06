@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MyMoviesViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *topRatedCollectionView;
+@property (weak, nonatomic) IBOutlet UICollectionView *nowShowingCollectionView;
+
 
 @property (copy, readwrite) NSArray *myMovies; 
 

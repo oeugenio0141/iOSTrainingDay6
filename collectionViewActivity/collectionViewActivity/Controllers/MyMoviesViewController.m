@@ -22,6 +22,8 @@
     
     [self.topRatedCollectionView registerNib:[UINib nibWithNibName:@"TopRatedMoviesCell" bundle:nil] forCellWithReuseIdentifier:@"topRated"];
     
+    [self.nowShowingCollectionView registerNib:[UINib nibWithNibName:@"NowShowingCell" bundle:nil] forCellWithReuseIdentifier:@"nowShowing"];
+    
     
     _myMovies = [[NSArray alloc] initWithObjects:
               @{@"photo" : @"img_luffy",
@@ -39,56 +41,77 @@
               @{@"photo" : @"img_nami",
                 @"name" : @"Nami",
                 },
-              @{@"photo" : @"img_chopper",
-                @"name" : @"Chopper",
+              @{@"photo" : @"img_luffy",
+                @"name" : @"Luffy",
                 },
-              @{@"photo" : @"img_franky",
-                @"name" : @"Franky",
+              @{@"photo" : @"img_zoro",
+                @"name" : @"Zoro",
                 },
-              @{@"photo" : @"img_robin",
-                @"name" : @"Robin",
+              @{@"photo" : @"img_usopp",
+                @"name" : @"Usopp",
                 },
-              @{@"photo" : @"img_brook",
-                @"name" : @"Brook",
+              @{@"photo" : @"img_sanji",
+                @"name" : @"Sanji",
                 },
-              @{@"photo" : @"img_jinbei",
-                @"name" : @"Jinbei",
-                },nil] ;
-    
-        
+              @{@"photo" : @"img_nami",
+                @"name" : @"Nami",
+                },
+              nil] ;
 
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    
     return self.myMovies.count;
+    
 }
 
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    TopRatedMoviesCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"topRated" forIndexPath:indexPath];
+    if (collectionView == self.topRatedCollectionView){
+        TopRatedMoviesCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"topRated" forIndexPath:indexPath];
+        
+        NSDictionary *dict = [_myMovies objectAtIndex:indexPath.item];
+        
+        cell.topRatedImageView.image = [UIImage imageNamed:dict[@"photo"]];
     
-    NSDictionary *dict = [self.myMovies objectAtIndex:indexPath.item];
-    cell.topRatedImageView.image = [UIImage imageNamed:dict[@"photo"]];
-    cell.topRatedLabel.text = dict[@"name"];
-    
-    return cell;
+        cell.topRatedLabel.text = dict[@"name"];
+        
+        return cell;
+        
+    } else{
+        NowShowingCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"nowShowing" forIndexPath:indexPath];
+        
+        NSDictionary *dict2 = [_myMovies objectAtIndex:indexPath.item];
+        
+        cell.nowShowingImageView.image = [UIImage imageNamed:dict2[@"photo"]];
+        
+        cell.nowShowingLabel.text = dict2[@"name"];
+        
+        return cell;
+        
+    }
+        
     
 }
-
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     CGRect screenBound = [[UIScreen mainScreen] bounds];
     CGSize screenSize = screenBound.size;
     
-    CGFloat computedHeight = screenSize.height;
-    CGFloat computedWidth = screenSize.width;
+    CGFloat computedHeight = screenSize.width / 3;
+    CGFloat computedWidth = screenSize.height / 4;
     
     return CGSizeMake(computedWidth, computedHeight);
     
+    
 }
+
+
+
 /*
 #pragma mark - Navigation
 
