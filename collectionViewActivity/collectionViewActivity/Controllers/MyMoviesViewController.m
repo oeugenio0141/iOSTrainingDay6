@@ -129,13 +129,28 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    CGRect screenBound = [[UIScreen mainScreen] bounds];
-    CGSize screenSize = screenBound.size;
     
-    CGFloat computedHeight = screenSize.width / 6;
-    CGFloat computedWidth = screenSize.height / 4;
     
-    return CGSizeMake(computedWidth, computedHeight);
+    if (collectionView == self.nowShowingCollectionView) {
+        CGRect screenBound = [[UIScreen mainScreen] bounds];
+        CGSize screenSize = screenBound.size;
+        
+        CGFloat computedHeight = screenSize.width / 2;
+        CGFloat computedWidth = screenSize.height / 4;
+        
+        return CGSizeMake(computedWidth, computedHeight);
+    }
+    
+    else{
+        CGRect screenBound = [[UIScreen mainScreen] bounds];
+        CGSize screenSize = screenBound.size;
+        
+        CGFloat computedHeight = screenSize.width / 3;
+        CGFloat computedWidth = screenSize.height / 4;
+        
+        return CGSizeMake(computedWidth, computedHeight);
+    }
+    
     
     
 }
